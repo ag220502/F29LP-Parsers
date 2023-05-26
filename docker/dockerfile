@@ -1,0 +1,42 @@
+FROM ocaml/opam:debian-ocaml-4.13
+
+RUN sudo apt-get update --fix-missing
+RUN sudo apt install -y libgmp-dev libffi-dev zlib1g-dev pkg-config python python3-pip libzmq5-dev
+RUN pip install jupyter 
+
+RUN opam remote add upstream https://github.com/ocaml/opam-repository.git
+RUN opam update && opam upgrade
+RUN opam install jupyter
+RUN eval $(opam env)
+
+# To actually find Jupyter
+ENV PATH $PATH:/home/opam/.local/bin
+RUN export PATH 
+
+RUN sudo mkdir /usr/local/share/jupyter
+RUN sudo chmod a+x /usr/local/share/jupyter
+# RUN python /home/opam/.local/bin/jupyter kernelspec install --name ocaml-jupyter "$(opam config var share)/jupyter" --user
+
+RUN sudo apt install sqlite3
+
+# Install the OCaml Kernel - First command is specific to this version...
+RUN /home/opam/.opam/4.13/bin/ocaml-jupyter-opam-genspec 
+RUN jupyter kernelspec install --user --name "ocaml-jupyter-$(opam var switch)" "$(opam var share)/jupyter"
+
+# For exporting
+RUN pip install nbconvert pyppeteer
+RUN sudo apt install -y texlive-xetex pandoc     
+
+# For code extensions 
+RUN opam install merlin utop
+
+# To use the require command.
+RUN grep topfind ~/.ocamlinit || echo '#use "topfind";;' >> ~/.ocamlinit  # For using '#require' directive
+
+# Quizzes
+RUN pip install sos jupyter_contrib_core sos-papermill sos-notebook
+RUN python3 -m sos_notebook.install
+RUN pip install jupyterquiz
+
+# Specify the directory in which things will be done.
+WORKDIR /lectures

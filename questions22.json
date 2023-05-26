@@ -1,0 +1,28 @@
+[
+    {
+        "question": "Choose all of the following statements that are true.",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "The order in which the different rules are presented is relevant.",
+                "correct": true,
+                "feedback": "Correct - the pattern of the first rule is matched first."
+            },
+                        {
+                "answer": "The rule for LTE should come before the rule for LT.",
+                "correct": false,
+                "feedback": "False - then <= would yield [LT; EQ]."
+            },
+            {
+                "answer": "We do not require rules for opening and closed brackets are lexed, as this is built into the lexer generator automatically.",
+                "correct": false,
+                "feedback": "False - we require to also set up rules for brackets."
+            },
+            {
+                "answer": "The rule | '*' { STAR } states that we match the input string on the regular expression '*' - and in this case, the next token is STAR.",
+                "correct": true,
+                "feedback": "Correct."
+            }
+        ]
+    }
+]

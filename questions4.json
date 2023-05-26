@@ -1,0 +1,47 @@
+[
+    {
+        "question": "What would be a valid compilation of program p1?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "1a",
+                "correct": false,
+                "feedback": "False."
+            },
+                        {
+                "answer": "1b",
+                "correct": false,
+                "feedback": "False."
+            },
+                {
+                "answer": "1c",
+                "correct": true,
+                "feedback": "Correct."
+            }
+            
+        ]
+    }, 
+    
+        {
+        "question": "What would be a valid compilation of program p2?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "2a",
+                "correct": true,
+                "feedback": "Correct."
+            },
+                        {
+                "answer": "2b",
+                "correct": false,
+                "feedback": "False - we need the negated branching condition."
+            },
+                {
+                "answer": "2c",
+                "correct": true,
+                "feedback": "Correct - this is a more optimized version."
+            }
+            
+        ]
+    }
+]

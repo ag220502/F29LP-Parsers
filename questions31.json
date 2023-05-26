@@ -1,0 +1,44 @@
+[
+    {
+        "question": "Which of the following syntactic categories are LL(1)?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "program",
+                "correct": true,
+                "feedback": "Correct."
+            },
+                        {
+                "answer": "declarations",
+                "correct": false,
+                "feedback": "No - compute the FIRST sets!"
+            },
+                {
+                "answer": "declaration",
+                "correct": true,
+                "feedback": "Correct."
+            },
+                                    {
+                "answer": "commands",
+                "correct": false,
+                "feedback": "No - compute the FIRST sets!"
+            },
+                                                {
+                "answer": "command",
+                "correct": false,
+                "feedback": "No - compute the FIRST sets!"
+            },
+                            {
+                "answer": "comp",
+                "correct": true,
+                "feedback": "Correct."
+            },
+                            {
+                "answer": "condexp",
+                "correct": true,
+                "feedback": "Correct."
+            }
+            
+        ]
+    }
+]

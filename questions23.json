@@ -1,0 +1,28 @@
+[
+    {
+        "question": "Choose all of the following statements that are true.",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "The rule for identifiers should be put before the rules of keywords.",
+                "correct": false,
+                "feedback": "False - then e.g. WHILE would be recognized as an identifier."
+            },
+                        {
+                "answer": "The string  xyz23 + 45 should recognize Id xyz as first token.",
+                "correct": false,
+                "feedback": "False - it should recognize Id xzy23."
+            },
+            {
+                "answer": "The function Lexing.lexeme converts a buffer into a string.",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "In principle, we can use every regular expression in the definition of a pattern.",
+                "correct": true,
+                "feedback": "Correct."
+            }
+        ]
+    }
+]

@@ -1,0 +1,36 @@
+[
+    {
+        "question": "What is your number of tokens?",
+        "type": "numeric",
+        "answers": [
+            {
+                "type": "value",
+                "value": 27,
+                "correct": true,
+                "feedback": "Correct."
+            },
+                        {
+                "type": "value",
+                "value": 26,
+                "correct": false,
+                "feedback": "Is it possible that you forgot the end-of-file symbol?"
+            },
+            {
+                "type": "range",
+                "range": [
+                    0, 25
+                ],
+                "correct": false,
+                "feedback": "There seem to be some tokens missing..."
+            },
+            {
+                "type": "range",
+                "range": [
+                    27, 10000
+                ],
+                "correct": false,
+                "feedback": "This seem to be too many tokens!"
+            }
+        ]
+    }
+]
